@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="Brightrail architecture">
+  <rect width="720" height="220" fill="#f8fafc"/>
+  <style>
+    .box { fill:#fff; stroke:#2563eb; stroke-width:2; rx:8; }
+    .t { font:600 14px Arial,sans-serif; fill:#0f172a; }
+    .s { font:12px Arial,sans-serif; fill:#475569; }
+    .a { stroke:#64748b; stroke-width:2; marker-end:url(#m); fill:none; }
+  </style>
+  <defs><marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker></defs>
+  <rect class="box" x="20" y="60" width="150" height="80"/><text class="t" x="95" y="95" text-anchor="middle">Funfair</text><text class="s" x="95" y="118" text-anchor="middle">Playground</text>
+  <rect class="box" x="285" y="60" width="150" height="80"/><text class="t" x="360" y="95" text-anchor="middle">brightrail</text><text class="s" x="360" y="118" text-anchor="middle">Library</text>
+  <rect class="box" x="550" y="60" width="150" height="80"/><text class="t" x="625" y="95" text-anchor="middle">Midway</text><text class="s" x="625" y="118" text-anchor="middle">Consumer app</text>
+  <line class="a" x1="170" y1="100" x2="285" y2="100"/><line class="a" x1="435" y1="100" x2="550" y2="100"/>
+  <text class="s" x="360" y="30" text-anchor="middle">Angular 21 component library architecture</text>
+</svg>

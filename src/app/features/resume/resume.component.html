@@ -1,0 +1,38 @@
+<section class="page">
+  <app-section-header
+    title="Resume"
+    subtitle="One-page professional summary — sanitized for public sharing. Full employer history available upon request."
+  />
+
+  @if (profile$ | async; as profile) {
+    <div class="resume-card">
+      <p>{{ profile.summary }}</p>
+
+      @if (profile.differentiators?.length) {
+        <h3>Highlights</h3>
+        <ul>
+          @for (item of (profile.differentiators ?? []).slice(0, 4); track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      }
+
+      <p class="note">
+        The downloadable resume uses industry-only labels (no employer or client names) and opens
+        as a print-ready PDF via your browser.
+      </p>
+
+      <div class="actions">
+        <button mat-flat-button color="primary" type="button" (click)="downloadPdf()">
+          <mat-icon>download</mat-icon>
+          Download PDF
+        </button>
+        <button mat-stroked-button type="button" (click)="previewResume()">
+          <mat-icon>visibility</mat-icon>
+          Preview resume
+        </button>
+        <a mat-stroked-button routerLink="/contact">Contact Me</a>
+      </div>
+    </div>
+  }
+</section>

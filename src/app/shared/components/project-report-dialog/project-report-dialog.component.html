@@ -1,0 +1,214 @@
+<div class="report" role="document">
+  <header class="report__header">
+    <div>
+      <p class="report__label">Project report</p>
+      <h2 class="report__title">{{ project.title }}</h2>
+      @if (project.reportSummary) {
+        <p class="report__summary">{{ project.reportSummary }}</p>
+      }
+      <div class="report__badges">
+        @for (tech of project.techStack; track tech) {
+          <app-badge [label]="tech" />
+        }
+      </div>
+    </div>
+    <button mat-icon-button type="button" (click)="close()" aria-label="Close project report">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <div class="report__body">
+    <section class="report__section">
+      <h3>Business problem</h3>
+      <p>{{ project.problem }}</p>
+    </section>
+
+    <section class="report__section">
+      <h3>Solution overview</h3>
+      <p>{{ project.solution }}</p>
+    </section>
+
+    @if (project.scope?.length) {
+      <section class="report__section">
+        <h3>Scope</h3>
+        <ul>
+          @for (item of project.scope; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (project.deliverables?.length) {
+      <section class="report__section">
+        <h3>Deliverables</h3>
+        <ul>
+          @for (item of project.deliverables; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (project.functionalRequirements?.length) {
+      <section class="report__section">
+        <h3>Functional requirements</h3>
+        <ul>
+          @for (req of project.functionalRequirements; track req) {
+            <li>{{ req }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (project.nonFunctionalRequirements?.length) {
+      <section class="report__section">
+        <h3>Non-functional requirements</h3>
+        <ul>
+          @for (req of project.nonFunctionalRequirements; track req) {
+            <li>{{ req }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    <section class="report__section">
+      <h3>Architecture highlights</h3>
+      <ul>
+        @for (item of project.architectureHighlights; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+
+    @if (project.diagrams.length) {
+      <section class="report__section">
+        <h3>Diagrams</h3>
+        <p class="report__hint">Click a diagram to view it full size.</p>
+        <div class="report__diagrams">
+          @for (diagram of project.diagrams; track diagram.name) {
+            @if (diagram.imageUrl) {
+              <button
+                type="button"
+                class="report__diagram"
+                (click)="openDiagram(diagram)"
+                [attr.aria-label]="'View diagram: ' + diagram.name"
+              >
+                <span class="report__diagram-label">{{ diagram.type }} — {{ diagram.name }}</span>
+                <img [src]="diagram.imageUrl" [alt]="diagram.name" loading="lazy" />
+              </button>
+            }
+          }
+        </div>
+      </section>
+    }
+
+    @if (project.entities.length) {
+      <section class="report__section">
+        <h3>Entity model</h3>
+        <ul>
+          @for (entity of project.entities; track entity) {
+            <li>{{ entity }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (project.apiDomains?.length) {
+      <section class="report__section">
+        <h3>API domains</h3>
+        <div class="report__table-wrap">
+          <table class="report__table">
+            <thead>
+              <tr>
+                <th>Prefix</th>
+                <th>Capabilities</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (domain of project.apiDomains; track domain.prefix) {
+                <tr>
+                  <td><code>{{ domain.prefix }}</code></td>
+                  <td>{{ domain.capabilities }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+    }
+
+    @if (project.useCases.length) {
+      <section class="report__section">
+        <h3>Use cases</h3>
+        <ul>
+          @for (useCase of project.useCases; track useCase) {
+            <li>{{ useCase }}</li>
+          }
+        </ul>
+      </section>
+    }
+
+    @for (sequence of project.sequences; track sequence.title) {
+      <section class="report__section">
+        <h3>Sequence — {{ sequence.title }}</h3>
+        <ol>
+          @for (step of sequence.steps; track step) {
+            <li>{{ step }}</li>
+          }
+        </ol>
+      </section>
+    }
+
+    <section class="report__section">
+      <h3>Key features</h3>
+      <ul>
+        @for (feature of project.keyFeatures; track feature) {
+          <li>{{ feature }}</li>
+        }
+      </ul>
+    </section>
+
+    @if (project.risks?.length) {
+      <section class="report__section">
+        <h3>Risks and mitigations</h3>
+        <div class="report__table-wrap">
+          <table class="report__table">
+            <thead>
+              <tr>
+                <th>Risk</th>
+                <th>Mitigation</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (item of project.risks; track item.risk) {
+                <tr>
+                  <td>{{ item.risk }}</td>
+                  <td>{{ item.mitigation }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+    }
+  </div>
+
+  <footer class="report__footer">
+    <a mat-stroked-button [href]="data.figjamBoardUrl" target="_blank" rel="noopener noreferrer">
+      <mat-icon>architecture</mat-icon>
+      FigJam board
+    </a>
+    <a mat-stroked-button [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+      <mat-icon>code</mat-icon>
+      GitHub
+    </a>
+    @if (project.liveDemoUrl) {
+      <a mat-stroked-button [href]="project.liveDemoUrl" target="_blank" rel="noopener noreferrer">
+        <mat-icon>launch</mat-icon>
+        Live demo
+      </a>
+    }
+    <button mat-flat-button color="primary" type="button" (click)="close()">Close</button>
+  </footer>
+</div>

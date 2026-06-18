@@ -1,0 +1,20 @@
+<section class="page">
+  <app-section-header
+    title="Skills"
+    subtitle="Technologies and practices I use to build and modernize enterprise systems."
+  />
+
+  @if (skills$ | async; as data) {
+    <div class="grid">
+      @for (category of data.categories; track category.name) {
+        <app-card [title]="category.name">
+          <div class="badges">
+            @for (skill of category.skills; track skill) {
+              <app-badge [label]="skill" />
+            }
+          </div>
+        </app-card>
+      }
+    </div>
+  }
+</section>

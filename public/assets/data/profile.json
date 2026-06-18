@@ -1,0 +1,56 @@
+{
+  "name": "Chandan Singh",
+  "title": "Senior Full Stack Engineer",
+  "headline": "Java · Spring Boot · Angular · Azure · Kubernetes · DevOps",
+  "location": "Irving, TX",
+  "email": "chandan.singh558@hotmail.com",
+  "phone": "(641) 233-0056",
+  "linkedin": "https://www.linkedin.com/in/chandansingh558",
+  "github": "https://github.com/chandansingh7",
+  "profileImageUrl": "/assets/images/profile.jpg",
+  "profileImageAlt": "Chandan Singh — Senior Full Stack Engineer",
+  "summary": "Senior Full Stack Engineer with 9+ years designing and modernizing enterprise applications using Java, Spring Boot, Angular, REST APIs, microservices, SQL, and DevOps automation. Experienced across healthcare, insurance, payments, and e-commerce—delivering cloud-native platforms, reusable UI standards, and secure integrations.",
+  "aboutParagraphs": [
+    "I partner with technical leads, product owners, DevOps teams, and Agile squads to remove delivery roadblocks, define reusable UI and API standards, and ship reliable software.",
+    "My work spans platform modernization (Java 8→21), accessible Angular component libraries, Spring Boot microservices, and automated CI/CD on Azure and Kubernetes.",
+    "I value clean architecture, security-first delivery, and documentation that helps teams move faster."
+  ],
+  "differentiators": [
+    "Led enterprise platform modernization across 40+ REST services (Java 8 → 21) with zero-downtime release patterns",
+    "Built publishable Angular component libraries with accessibility-oriented patterns (WCAG/ARIA)",
+    "Full-stack ownership: API design, UI delivery, K8s/Helm deployment, and architecture documentation",
+    "Regulated-industry experience: healthcare, insurance, and payments with security-first practices"
+  ],
+  "stats": [
+    { "label": "Years experience", "value": "9+" },
+    { "label": "Featured projects", "value": "6" },
+    { "label": "GitHub repos", "value": "29" },
+    { "label": "Certifications", "value": "8" }
+  ],
+  "education": [
+    {
+      "school": "University of the Cumberlands",
+      "degree": "Executive Master's in Information Technology",
+      "period": "Dec 2024 – Aug 2026 (pursuing)"
+    },
+    {
+      "school": "Maharishi International University",
+      "degree": "MS Computer Science",
+      "period": "Apr 2021 – Dec 2024"
+    },
+    {
+      "school": "Lovely Professional University",
+      "degree": "Diploma, Information Technology",
+      "period": "Jun 2010 – Aug 2013"
+    }
+  ],
+  "certifications": [
+    "AZ-204: Developing Solutions for Microsoft Azure",
+    "DevOps for Enterprise Business Agility (IBM)",
+    "Terraform for Absolute Beginners with Labs",
+    "Kubernetes Hands-on Lab for Beginners (KodeKloud)",
+    "Power BI Data Analyst",
+    "Cloud for the Enterprise (IBM)",
+    "CCNA Routing & Switching"
+  ]
+}

@@ -1,0 +1,17 @@
+@if (profile$ | async; as profile) {
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>{{ profile.name }}</strong>
+        <p>{{ profile.title }}</p>
+      </div>
+      <div class="links">
+        <a [href]="profile.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a [href]="'mailto:' + profile.email">Email</a>
+        <a routerLink="/contact">Contact</a>
+      </div>
+    </div>
+    <p class="copy">&copy; {{ year }} {{ profile.name }}. All rights reserved.</p>
+  </footer>
+}

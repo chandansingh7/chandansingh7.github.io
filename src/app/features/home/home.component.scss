@@ -1,0 +1,228 @@
+@use 'responsive' as *;
+
+.hero {
+  padding-top: clamp(1.5rem, 5vw, 3rem);
+  padding-bottom: clamp(1rem, 4vw, 2rem);
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, var(--bg)), var(--bg));
+  border-radius: 0 0 clamp(12px, 3vw, 24px) clamp(12px, 3vw, 24px);
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 2rem);
+
+  @include up(900px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: clamp(120px, 32vw, 200px);
+  height: clamp(120px, 32vw, 200px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--surface);
+  outline: 3px solid var(--accent);
+  box-shadow: 0 16px 40px rgb(37 99 235 / 18%);
+}
+
+.hero-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+
+  @include up(900px) {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    margin: 0.5rem 0 0;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0.5rem 0 1rem;
+    line-height: 1.35;
+  }
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: clamp(0.72rem, 2.5vw, 0.85rem);
+  line-height: 1.5;
+}
+
+.summary {
+  max-width: 720px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 auto;
+  font-size: clamp(0.95rem, 2.8vw, 1rem);
+
+  @include up(900px) {
+    margin: 0;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+
+  @include up($bp-sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  @include up(900px) {
+    justify-content: flex-start;
+  }
+
+  a,
+  button {
+    width: 100%;
+
+    @include up($bp-sm) {
+      width: auto;
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  @include up($bp-md) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.stat {
+  padding: clamp(0.875rem, 3vw, 1.25rem) 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-elevated);
+  text-align: center;
+  min-width: 0;
+
+  strong {
+    display: block;
+    font-size: clamp(1.35rem, 5vw, 1.75rem);
+    color: var(--accent);
+    line-height: 1.2;
+  }
+
+  span {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+}
+
+.highlights {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.featured {
+  padding-top: 1.5rem;
+  padding-bottom: clamp(2rem, 6vw, 3rem);
+}
+
+.featured-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+
+  @include up($bp-sm) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+
+  @include up($bp-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  [card-actions] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    @include up($bp-sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    a,
+    button {
+      width: 100%;
+
+      @include up($bp-sm) {
+        width: auto;
+      }
+    }
+
+    button mat-icon {
+      margin-right: 0.25rem;
+    }
+  }
+}

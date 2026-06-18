@@ -1,0 +1,27 @@
+<div class="viewer" role="dialog" aria-modal="true" [attr.aria-label]="data.title">
+  <header class="viewer__header">
+    <div class="viewer__titles">
+      @if (data.projectTitle) {
+        <p class="viewer__project">{{ data.projectTitle }}</p>
+      }
+      <h2 class="viewer__title">{{ data.title }}</h2>
+      @if (data.subtitle) {
+        <p class="viewer__subtitle">{{ data.subtitle }}</p>
+      }
+    </div>
+    <div class="viewer__actions">
+      <button mat-stroked-button type="button" (click)="openInNewTab()">
+        <mat-icon>open_in_new</mat-icon>
+        Open original
+      </button>
+      <button mat-flat-button color="primary" type="button" (click)="close()">
+        <mat-icon>close</mat-icon>
+        Close
+      </button>
+    </div>
+  </header>
+
+  <div class="viewer__canvas">
+    <img [src]="data.imageUrl" [alt]="data.title" class="viewer__image" />
+  </div>
+</div>

@@ -1,0 +1,78 @@
+@if (vm$ | async; as vm) {
+  <article class="resume-print">
+    <header class="resume-print__header">
+      <div>
+        <h1>{{ vm.profile.name }}</h1>
+        <p class="resume-print__title">{{ vm.profile.title }}</p>
+        <p class="resume-print__headline">{{ vm.profile.headline }}</p>
+      </div>
+      <address class="resume-print__contact">
+        <span>{{ vm.profile.location }}</span>
+        <a [href]="'mailto:' + vm.profile.email">{{ vm.profile.email }}</a>
+        <span>{{ vm.profile.phone }}</span>
+        <a [href]="vm.profile.linkedin">LinkedIn</a>
+        <a [href]="vm.profile.github">GitHub</a>
+      </address>
+    </header>
+
+    <section>
+      <h2>Professional summary</h2>
+      <p>{{ vm.profile.summary }}</p>
+    </section>
+
+    <section>
+      <h2>Core strengths</h2>
+      <ul>
+        @for (item of vm.profile.differentiators ?? []; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      @for (job of vm.experiences; track job.period + job.title) {
+        <article class="resume-print__job">
+          <div class="resume-print__job-head">
+            <strong>{{ job.title }}</strong>
+            <span>{{ job.period }}</span>
+          </div>
+          <p class="resume-print__job-meta">
+            {{ job.organization }} · {{ job.industry }} · {{ job.location }}
+          </p>
+          <ul>
+            @for (point of job.highlights; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+          <p class="resume-print__tech">{{ job.technologies.join(' · ') }}</p>
+        </article>
+      }
+    </section>
+
+    <section>
+      <h2>Technical skills</h2>
+      @for (category of vm.skillCategories; track category.name) {
+        <p><strong>{{ category.name }}:</strong> {{ category.skills.join(', ') }}</p>
+      }
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      @for (item of vm.profile.education; track item.school) {
+        <p>
+          <strong>{{ item.school }}</strong> — {{ item.degree }} ({{ item.period }})
+        </p>
+      }
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <p>{{ vm.profile.certifications.join(' · ') }}</p>
+    </section>
+
+    <footer class="resume-print__footer">
+      <p>Detailed employer history available upon request. Public portfolio: chandansingh7.github.io</p>
+    </footer>
+  </article>
+}

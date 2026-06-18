@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": ["Angular 12–21", "TypeScript", "RxJS", "Angular Material", "SCSS", "HTML5", "CSS3", "WCAG/ARIA"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Java 8–21", "Spring Boot", "Spring Security", "REST APIs", "Microservices", "Spring Batch", "OAuth2/JWT"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "skills": ["Azure", "AWS", "Docker", "Kubernetes", "Helm", "Argo CD", "Terraform", "Jenkins", "GitHub Actions"]
+    },
+    {
+      "name": "Database & Messaging",
+      "skills": ["SQL", "MySQL", "MongoDB", "Kafka", "PostgreSQL", "Batch processing"]
+    },
+    {
+      "name": "Testing & Security",
+      "skills": ["JUnit", "Mockito", "Jasmine", "Karma", "Cypress", "Secure coding", "Vulnerability remediation"]
+    },
+    {
+      "name": "Tools",
+      "skills": ["Git", "Maven", "Gradle", "IntelliJ IDEA", "VS Code", "Jira", "Postman"]
+    }
+  ]
+}

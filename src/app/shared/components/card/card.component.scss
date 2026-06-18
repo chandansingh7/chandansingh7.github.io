@@ -1,0 +1,33 @@
+.app-card {
+  height: 100%;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  min-width: 0;
+
+  mat-card-content {
+    overflow-wrap: anywhere;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 1rem !important;
+}
+
+mat-card-actions:empty {
+  display: none;
+}
+
+mat-card-title {
+  font-size: clamp(1rem, 3.2vw, 1.15rem) !important;
+  line-height: 1.35 !important;
+}

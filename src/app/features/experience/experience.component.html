@@ -1,0 +1,10 @@
+<section class="page">
+  <app-section-header
+    title="Experience"
+    subtitle="9+ years delivering full-stack and platform work across regulated industries."
+  />
+
+  @if (experience$ | async; as data) {
+    <app-timeline [items]="data.experiences" />
+  }
+</section>

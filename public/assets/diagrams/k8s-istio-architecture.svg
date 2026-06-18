@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="Kubernetes Istio platform architecture">
+  <rect width="720" height="220" fill="#f8fafc"/>
+  <style>.box{fill:#fff;stroke:#2563eb;stroke-width:2;rx:8}.t{font:600 13px Arial,sans-serif;fill:#0f172a}.s{font:12px Arial,sans-serif;fill:#475569}.a{stroke:#64748b;stroke-width:2;marker-end:url(#m);fill:none}</style>
+  <defs><marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker></defs>
+  <rect class="box" x="20" y="70" width="130" height="70"/><text class="t" x="85" y="100" text-anchor="middle">Engineer</text>
+  <rect class="box" x="190" y="70" width="150" height="70"/><text class="t" x="265" y="100" text-anchor="middle">Scripts</text><text class="s" x="265" y="120" text-anchor="middle">Shell / YAML</text>
+  <rect class="box" x="380" y="70" width="130" height="70"/><text class="t" x="445" y="100" text-anchor="middle">Kubernetes</text>
+  <rect class="box" x="550" y="70" width="130" height="70"/><text class="t" x="615" y="100" text-anchor="middle">Istio Mesh</text>
+  <line class="a" x1="150" y1="105" x2="190" y2="105"/><line class="a" x1="340" y1="105" x2="380" y2="105"/><line class="a" x1="510" y1="105" x2="550" y2="105"/>
+  <text class="s" x="360" y="40" text-anchor="middle">Platform automation and service mesh operations</text>
+</svg>

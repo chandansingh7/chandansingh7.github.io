@@ -1,0 +1,25 @@
+<div class="timeline">
+  @for (item of items; track item.period + item.title) {
+    <article class="timeline-item">
+      <div class="marker" aria-hidden="true"></div>
+      <div class="content">
+        <div class="meta">
+          <span class="period">{{ item.period }}</span>
+          <span class="industry">{{ item.industry }}</span>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p class="org">{{ item.organization }} · {{ item.location }}</p>
+        <ul>
+          @for (point of item.highlights; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+        <div class="badges">
+          @for (tech of item.technologies; track tech) {
+            <app-badge [label]="tech" />
+          }
+        </div>
+      </div>
+    </article>
+  }
+</div>

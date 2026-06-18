@@ -1,0 +1,11 @@
+<div class="app-shell">
+  @if (showChrome()) {
+    <app-navbar />
+  }
+  <main id="main-content" [class.main--print]="!showChrome()">
+    <router-outlet />
+  </main>
+  @if (showChrome()) {
+    <app-footer />
+  }
+</div>

@@ -1,0 +1,60 @@
+<section class="page">
+  @if (profile$ | async; as profile) {
+    <div class="about-intro">
+      <img
+        class="about-photo"
+        [src]="profile.profileImageUrl"
+        [alt]="profile.profileImageAlt"
+        width="120"
+        height="120"
+        loading="lazy"
+      />
+      <app-section-header
+        title="About Me"
+        subtitle="Enterprise full-stack engineering across healthcare, insurance, payments, and e-commerce."
+      />
+    </div>
+
+    @for (paragraph of profile.aboutParagraphs; track paragraph) {
+      <p class="paragraph">{{ paragraph }}</p>
+    }
+
+    @if (profile.differentiators?.length) {
+      <h3>What I bring to your team</h3>
+      <ul class="differentiators">
+        @for (item of profile.differentiators; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    }
+
+    @if (profile.stats?.length) {
+      <div class="stats">
+        @for (stat of profile.stats; track stat.label) {
+          <div class="stat">
+            <strong>{{ stat.value }}</strong>
+            <span>{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    }
+
+    <h3>Education</h3>
+    <div class="education-list">
+      @for (item of profile.education; track item.school) {
+        <article>
+          <strong>{{ item.school }}</strong>
+          <p>{{ item.degree }}</p>
+          <span>{{ item.period }}</span>
+        </article>
+      }
+    </div>
+
+    <h3>Certifications</h3>
+    <div class="badges">
+      @for (cert of profile.certifications; track cert) {
+        <app-badge [label]="cert" />
+      }
+    </div>
+  }
+</section>

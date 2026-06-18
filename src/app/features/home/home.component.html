@@ -1,0 +1,77 @@
+@if (vm$ | async; as vm) {
+  <section class="hero page">
+    <div class="hero-inner">
+      <div class="hero-photo-wrap">
+        <img
+          class="hero-photo"
+          [src]="vm.profile.profileImageUrl"
+          [alt]="vm.profile.profileImageAlt"
+          width="200"
+          height="200"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">{{ vm.profile.headline }}</p>
+        <h1>{{ vm.profile.name }}</h1>
+        <h2>{{ vm.profile.title }}</h2>
+        <p class="summary">{{ vm.profile.summary }}</p>
+        <div class="actions">
+          <a mat-flat-button color="primary" routerLink="/projects">View Projects</a>
+          <a mat-stroked-button routerLink="/resume">Download Resume</a>
+          <a mat-stroked-button routerLink="/contact">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @if (vm.profile.stats?.length) {
+    <section class="stats page" aria-label="Career highlights">
+      @for (stat of vm.profile.stats; track stat.label) {
+        <div class="stat">
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </div>
+      }
+    </section>
+  }
+
+  @if (vm.profile.differentiators?.length) {
+    <section class="highlights page">
+      <h2>Why work with me</h2>
+      <ul>
+        @for (item of vm.profile.differentiators; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  <section class="featured page">
+    <div class="featured-head">
+      <h2>Featured Projects</h2>
+      <a mat-button routerLink="/projects">View all projects</a>
+    </div>
+    <div class="grid">
+      @for (project of vm.featuredProjects; track project.id) {
+        <app-card [title]="project.title" [badges]="project.techStack.slice(0, 4)">
+          <p>{{ project.reportSummary ?? project.solution }}</p>
+          <div card-actions>
+            <button
+              mat-flat-button
+              color="primary"
+              type="button"
+              (click)="openProjectReport(project, vm.projects.figjamBoardUrl)"
+            >
+              <mat-icon>article</mat-icon>
+              View report
+            </button>
+            <a mat-button [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </app-card>
+      }
+    </div>
+  </section>
+}

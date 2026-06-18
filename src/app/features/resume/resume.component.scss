@@ -1,0 +1,57 @@
+@use 'responsive' as *;
+
+.resume-card {
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-elevated);
+  max-width: 760px;
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+h3 {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text-primary);
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+
+  @include up($bp-sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  a,
+  button {
+    width: 100%;
+
+    @include up($bp-sm) {
+      width: auto;
+    }
+  }
+
+  button mat-icon,
+  a mat-icon {
+    margin-right: 0.35rem;
+  }
+}

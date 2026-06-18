@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="BrightBubbles use cases">
+  <rect width="720" height="260" fill="#f8fafc"/>
+  <style>.box{fill:#fff;stroke:#2563eb;stroke-width:2;rx:8}.t{font:600 13px Arial,sans-serif;fill:#0f172a}.s{font:12px Arial,sans-serif;fill:#475569}.a{stroke:#64748b;stroke-width:2;marker-end:url(#m);fill:none}</style>
+  <defs><marker id="m" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/></marker></defs>
+  <rect class="box" x="30" y="90" width="110" height="60"/><text class="t" x="85" y="125" text-anchor="middle">Child</text>
+  <rect class="box" x="180" y="90" width="110" height="60"/><text class="t" x="235" y="125" text-anchor="middle">World Map</text>
+  <rect class="box" x="330" y="90" width="110" height="60"/><text class="t" x="385" y="125" text-anchor="middle">Balloon Pop</text>
+  <rect class="box" x="480" y="90" width="110" height="60"/><text class="t" x="535" y="125" text-anchor="middle">Rewards</text>
+  <rect class="box" x="610" y="90" width="90" height="60"/><text class="t" x="655" y="125" text-anchor="middle">Storage</text>
+  <line class="a" x1="140" y1="120" x2="180" y2="120"/><line class="a" x1="290" y1="120" x2="330" y2="120"/><line class="a" x1="440" y1="120" x2="480" y2="120"/><line class="a" x1="590" y1="120" x2="610" y2="120"/>
+  <rect class="box" x="30" y="190" width="110" height="50"/><text class="t" x="85" y="220" text-anchor="middle">Parent Zone</text>
+  <text class="s" x="360" y="40" text-anchor="middle">Offline-first learning game flow</text>
+</svg>

@@ -1,0 +1,108 @@
+{
+  "experiences": [
+    {
+      "organization": "Technology consulting engagement",
+      "industry": "Healthcare",
+      "title": "Senior Full Stack Engineer",
+      "period": "May 2025 – Present",
+      "location": "Texas, USA (Remote)",
+      "highlights": [
+        "Led enterprise platform modernization (Java 8 → 21) across 40+ REST services and application server upgrade",
+        "Designed and maintained REST APIs for large-scale operational and catalog workflows serving multi-team consumers",
+        "Cut release friction with Git-based SCM, automated CI/CD pipelines, and proactive security vulnerability remediation",
+        "Supported cloud-native deployments on Azure Kubernetes Service with Helm-based release patterns"
+      ],
+      "technologies": ["Java 21", "Spring Boot", "REST APIs", "Angular", "Azure", "Kubernetes", "GitHub Actions"]
+    },
+    {
+      "organization": "Technology consulting engagement",
+      "industry": "Healthcare",
+      "title": "Software Engineer",
+      "period": "Apr 2024 – Feb 2025",
+      "location": "USA (Remote)",
+      "highlights": [
+        "Built reusable Angular UI components (tables, cards, selects) with WCAG-oriented accessibility for enterprise catalog tools",
+        "Delivered Spring Boot APIs for licensing and feature-access patterns used across multiple product surfaces",
+        "Authored Helm charts and contributed to Kubernetes observability and Istio service-mesh initiatives",
+        "Improved developer onboarding with documented component APIs and consistent REST response standards"
+      ],
+      "technologies": ["Angular", "Spring Boot", "MongoDB", "Kafka", "Helm", "Kubernetes", "Azure"]
+    },
+    {
+      "organization": "Technology consulting engagement",
+      "industry": "Insurance",
+      "title": "Software Engineer",
+      "period": "Nov 2022 – Feb 2024",
+      "location": "USA (Remote)",
+      "highlights": [
+        "Led backend architecture for role-based administration and secure insurance data workflows",
+        "Built Spring Batch pipelines processing large daily data feeds with downstream validation and loading",
+        "Implemented Spring Security REST APIs, automated test suites, and CI/CD with Terraform infrastructure-as-code",
+        "Reduced manual ops through scheduled batch automation and structured error-handling patterns"
+      ],
+      "technologies": ["Java", "Spring Boot", "Spring Batch", "Spring Security", "Kafka", "Angular", "AWS", "Terraform"]
+    },
+    {
+      "organization": "Technology consulting engagement",
+      "industry": "Payments",
+      "title": "Software Engineer",
+      "period": "Mar 2022 – Aug 2022",
+      "location": "USA (Remote)",
+      "highlights": [
+        "Generated and customized a Java SDK from OpenAPI specifications using template-driven codegen tooling",
+        "Automated secure artifact publishing with GitHub Actions and CircleCI pipelines",
+        "Contributed to modular frontend architecture and API integration test coverage for payment workflows"
+      ],
+      "technologies": ["Java", "OpenAPI", "Spring Boot", "GitHub Actions", "CircleCI", "Angular"]
+    },
+    {
+      "organization": "Software services company",
+      "industry": "FinTech / E-commerce",
+      "title": "Full Stack Engineer",
+      "period": "Oct 2020 – Apr 2021",
+      "location": "Nepal (Onsite)",
+      "highlights": [
+        "Developed Spring Boot REST and GraphQL services with Angular frontends for payment and e-commerce flows",
+        "Implemented secure payment, profile, and onboarding workflows with OAuth2 integration patterns",
+        "Delivered Dockerized microservices on AWS with Kafka messaging for event-driven order processing"
+      ],
+      "technologies": ["Java", "Spring Boot", "Angular", "GraphQL", "Kafka", "MySQL", "AWS", "Docker"]
+    },
+    {
+      "organization": "Software services company",
+      "industry": "Construction / Retail web",
+      "title": "Full Stack Engineer",
+      "period": "Jul 2019 – Sep 2020",
+      "location": "Qatar (Onsite)",
+      "highlights": [
+        "Built full-stack web applications, product catalogs, and internal dashboards for retail operations",
+        "Implemented REST APIs, SEO improvements, and CMS workflows supporting multi-language content"
+      ],
+      "technologies": ["Java", "Spring Boot", "Hibernate", "Angular", "MySQL", "AWS"]
+    },
+    {
+      "organization": "IT services company",
+      "industry": "Hardware & field services",
+      "title": "Full Stack Engineer",
+      "period": "Jan 2019 – Jun 2019",
+      "location": "Nepal (Onsite)",
+      "highlights": [
+        "Developed role-based dashboards for ordering, scheduling, and field service operations",
+        "Implemented billing and time-calculation logic reducing manual invoice processing"
+      ],
+      "technologies": ["Java", "Spring Boot", "Angular", "MySQL"]
+    },
+    {
+      "organization": "Trading & IT services company",
+      "industry": "E-commerce / IT distribution",
+      "title": "Full Stack Engineer",
+      "period": "Sep 2016 – Dec 2018",
+      "location": "Qatar (Onsite)",
+      "highlights": [
+        "Built customer-facing catalog and company web platforms with admin content workflows",
+        "Developed internal operations dashboards supporting inventory and order management"
+      ],
+      "technologies": ["Java", "Spring Boot", "Angular", "SQL"]
+    }
+  ]
+}

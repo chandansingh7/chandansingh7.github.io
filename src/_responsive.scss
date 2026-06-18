@@ -1,0 +1,22 @@
+// Shared breakpoint tokens
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 960px;
+$bp-xl: 1100px;
+
+@mixin down($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin up($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}

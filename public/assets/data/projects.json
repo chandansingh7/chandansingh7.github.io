@@ -1,0 +1,690 @@
+{
+  "figjamBoardUrl": "https://www.figma.com/board/Uh4oBZt4uBFdOwmySKv8FQ",
+  "projects": [
+    {
+      "id": "brightrail",
+      "title": "Brightrail — Angular 21 Component Library",
+      "reportSummary": "Publishable Angular 21 component library with Funfair playground and Midway consumer verification app.",
+      "problem": "Teams need consistent, accessible UI building blocks for Angular applications.",
+      "solution": "Built a standalone Angular 21 component library with Funfair playground and Midway consumer app for npm-style verification.",
+      "techStack": [
+        "Angular 21",
+        "TypeScript",
+        "SCSS",
+        "RxJS"
+      ],
+      "keyFeatures": [
+        "Reusable standalone UI components",
+        "Funfair dev playground on GitHub Pages",
+        "Midway consumer smoke-test app",
+        "Accessibility-oriented patterns",
+        "npm-ready library packaging"
+      ],
+      "architectureHighlights": [
+        "Library-first monorepo: brightrail + funfair + midway",
+        "Funfair uses source path mapping; Midway uses node_modules dist",
+        "Theme-friendly SCSS component APIs",
+        "Angular 21 peer dependency >=21.0.0 <22.0.0"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/brightrail",
+      "liveDemoUrl": "https://chandansingh7.github.io/brightrail/",
+      "relatedRepos": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/chandansingh7/brightrail"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "Brightrail - Architecture",
+          "type": "Architecture",
+          "imageUrl": "/assets/diagrams/brightrail-architecture.svg"
+        }
+      ],
+      "useCases": [
+        "Library author builds components and publishes to dist/",
+        "Developer installs brightrail via npm and imports standalone components",
+        "Reviewer browses live Funfair playground without local setup"
+      ],
+      "sequences": [
+        {
+          "title": "Consumer integration flow",
+          "steps": [
+            "Run npm run build:lib to produce dist/brightrail",
+            "Consumer app adds brightrail dependency",
+            "Import standalone components into feature modules",
+            "Verify styling and accessibility in consumer UI"
+          ]
+        }
+      ],
+      "entities": [],
+      "scope": [
+        "Reusable Angular 21 standalone UI component library",
+        "Funfair developer playground with source-mapped library builds",
+        "Midway consumer app for npm-style integration verification",
+        "GitHub Pages hosted component showcase"
+      ],
+      "deliverables": [
+        "Publishable brightrail library package in dist/brightrail",
+        "Funfair playground application (port 4200)",
+        "Midway verification consumer app (port 4201)",
+        "Architecture and integration documentation"
+      ],
+      "functionalRequirements": [
+        "Library author can build, preview, and export standalone components",
+        "Consumer app can install and import components via npm-style dependency",
+        "Funfair playground documents each component with live examples",
+        "Midway app validates real-world consumer integration path"
+      ],
+      "nonFunctionalRequirements": [
+        "Angular 21 peer dependency: >=21.0.0 <22.0.0",
+        "Accessibility-oriented component patterns (WCAG-minded)",
+        "Theme-friendly SCSS token architecture",
+        "Node 24.x compatible build toolchain"
+      ],
+      "risks": [
+        {
+          "risk": "Breaking changes across Angular major versions",
+          "mitigation": "Pin peer dependency range; maintain Midway verification app in CI"
+        },
+        {
+          "risk": "Incomplete component catalog documentation",
+          "mitigation": "Expand Funfair examples per component with usage notes"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "pos-mono",
+      "title": "POS Mono — Full-Stack Platform (CicdPOS)",
+      "reportSummary": "Production-grade retail POS platform: Spring Boot API, Angular PWA, Tauri desktop, PostgreSQL, JWT RBAC.",
+      "problem": "Retail stores need one backend for catalog, inventory, checkout, shifts, refunds, and administration — with web and desktop clients.",
+      "solution": "Spring Boot 3 REST API with PostgreSQL, JWT role-based security, Angular Material web UI, and optional Tauri desktop shell.",
+      "techStack": [
+        "Java",
+        "Spring Boot 3",
+        "PostgreSQL",
+        "Angular",
+        "JWT",
+        "Tauri",
+        "Azure Blob"
+      ],
+      "keyFeatures": [
+        "Full POS checkout with barcode and offline sync",
+        "Role-based access: ADMIN, MANAGER, CASHIER",
+        "Inventory, shifts, refunds, reports, labels",
+        "PWA offline support with IndexedDB",
+        "Company settings, backup, access logs"
+      ],
+      "architectureHighlights": [
+        "API-first: pos-mono-api serves Angular UI and Tauri desktop",
+        "Layered REST with ApiResponse wrapper and ErrorCode",
+        "PostgreSQL persistence + Azure Blob for product images",
+        "Single-tenant store model with shared catalog and orders"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/pos-mono-api",
+      "liveDemoUrl": "",
+      "relatedRepos": [
+        {
+          "label": "API",
+          "url": "https://github.com/chandansingh7/pos-mono-api"
+        },
+        {
+          "label": "Web UI",
+          "url": "https://github.com/chandansingh7/pos-mono-ui"
+        },
+        {
+          "label": "Desktop",
+          "url": "https://github.com/chandansingh7/pos-mono-desktop"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "System Architecture",
+          "type": "Architecture",
+          "imageUrl": "/assets/diagrams/pos-mono/01-system-architecture.png"
+        },
+        {
+          "name": "User Flow & Use Cases",
+          "type": "Use case",
+          "imageUrl": "/assets/diagrams/pos-mono/02-user-flow-use-cases.png"
+        },
+        {
+          "name": "Authentication Sequence",
+          "type": "Sequence",
+          "imageUrl": "/assets/diagrams/pos-mono/03-auth-sequence.png"
+        },
+        {
+          "name": "ER Diagram",
+          "type": "ER",
+          "imageUrl": "/assets/diagrams/pos-mono/04-er-diagram.png"
+        },
+        {
+          "name": "Sales Flowchart",
+          "type": "Flow",
+          "imageUrl": "/assets/diagrams/pos-mono/05-sales-flowchart.png"
+        },
+        {
+          "name": "Order Processing Sequence",
+          "type": "Sequence",
+          "imageUrl": "/assets/diagrams/pos-mono/06-order-sequence.png"
+        },
+        {
+          "name": "Deployment Diagram",
+          "type": "Deployment",
+          "imageUrl": "/assets/diagrams/pos-mono/07-deployment.png"
+        },
+        {
+          "name": "Component Diagram",
+          "type": "Component",
+          "imageUrl": "/assets/diagrams/pos-mono/08-component-diagram.png"
+        }
+      ],
+      "useCases": [
+        "Admin: manage users, settings, billing, backup, IP rules",
+        "Manager: catalog, inventory, reports, shifts, labels",
+        "Cashier: POS checkout, customers, orders, refunds, own shift"
+      ],
+      "sequences": [
+        {
+          "title": "Checkout sequence",
+          "steps": [
+            "Cashier POST /api/auth/login → JWT issued",
+            "Open shift if required by store policy",
+            "Scan/search products and build cart",
+            "POST /api/orders → persist order, items, inventory update",
+            "Print or email receipt to customer"
+          ]
+        }
+      ],
+      "entities": [
+        "Company, User, Product, Category, Inventory",
+        "Customer, Order, OrderItem, Payment",
+        "Refund, RefundItem, Shift, Label, TaxRule",
+        "AccessLog, UserAllowedIp, UserBlockedIp"
+      ],
+      "scope": [
+        "Spring Boot 3 REST API with PostgreSQL persistence",
+        "Angular Material PWA for staff workflows (cashier, manager, admin)",
+        "Optional Tauri desktop client for dedicated POS terminals",
+        "Catalog, inventory, checkout, shifts, refunds, and reporting"
+      ],
+      "deliverables": [
+        "pos-mono-api — REST API with JWT RBAC",
+        "pos-mono-ui — Angular PWA with offline POS support",
+        "pos-mono-desktop — Tauri desktop shell",
+        "Architecture, ER, sequence, and deployment diagrams"
+      ],
+      "functionalRequirements": [
+        "Staff authenticate via JWT with role-based access (ADMIN, MANAGER, CASHIER)",
+        "Cashiers run POS checkout with barcode scan, cart, and receipt generation",
+        "Managers manage catalog, inventory, shifts, labels, and reports",
+        "Admins manage users, company settings, billing, backup, and IP access rules",
+        "Offline orders queue locally and sync when connectivity is restored",
+        "Product images stored in Azure Blob Storage"
+      ],
+      "nonFunctionalRequirements": [
+        "PWA offline mode with IndexedDB and service worker sync",
+        "HCI UI standards: compact tables, 40px touch targets",
+        "Structured API responses via ApiResponse wrapper and ErrorCode enum",
+        "Access logging and IP allow/block lists for security audit",
+        "Stateless API tier for horizontal scaling"
+      ],
+      "apiDomains": [
+        {
+          "prefix": "/api/auth",
+          "capabilities": "Register, login, password change"
+        },
+        {
+          "prefix": "/api/products",
+          "capabilities": "CRUD, search, barcode, bulk upload, images"
+        },
+        {
+          "prefix": "/api/categories",
+          "capabilities": "Category management"
+        },
+        {
+          "prefix": "/api/inventory",
+          "capabilities": "Stock levels, low-stock alerts"
+        },
+        {
+          "prefix": "/api/orders",
+          "capabilities": "Create, list, cancel, refund, receipt"
+        },
+        {
+          "prefix": "/api/shifts",
+          "capabilities": "Open, close, force-close shift sessions"
+        },
+        {
+          "prefix": "/api/offline-orders",
+          "capabilities": "Batch sync when back online"
+        },
+        {
+          "prefix": "/api/customers",
+          "capabilities": "CRUD, member cards"
+        },
+        {
+          "prefix": "/api/labels",
+          "capabilities": "Label printing workflows"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Offline sync conflicts on reconnect",
+          "mitigation": "Idempotent sync endpoints and conflict resolution in service layer"
+        },
+        {
+          "risk": "JWT token compromise",
+          "mitigation": "Short-lived tokens; IP restrictions for admin roles"
+        },
+        {
+          "risk": "Single-tenant model limits multi-store expansion",
+          "mitigation": "Document tenant boundary; plan schema extension if needed"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "brightbubbles",
+      "title": "BrightBubbles — Kids Learning Adventure",
+      "reportSummary": "Kid-friendly bubble color-pop learning game: Angular + Phaser 3 + Capacitor. 20 levels, 3 age modes, offline-first, privacy-first (no login, no ads).",
+      "problem": "Children need engaging, age-appropriate learning games that work offline without accounts, ads, or data collection.",
+      "solution": "BrightBubbles combines an Angular app shell with Phaser 3 game scenes and Capacitor mobile packaging. Progress stays on-device only — see PRIVACY.md on GitHub.",
+      "techStack": [
+        "Angular",
+        "Phaser 3",
+        "TypeScript",
+        "Capacitor",
+        "PWA"
+      ],
+      "keyFeatures": [
+        "Landing, splash, age mode, world map, Balloon Pop, rewards, parent zone",
+        "20 levels × 3 age modes (Tiny Learner, Explorer, Smart Challenger)",
+        "Star rewards, stickers, local progress persistence",
+        "Offline-first PWA — no login, no ads, no data collection",
+        "Procedural Web Audio + Capacitor Android/iOS packaging"
+      ],
+      "architectureHighlights": [
+        "Angular shell (src/app/) for routing, pages, and services",
+        "Phaser 3 game engine (src/game/) for scenes, logic, and level data",
+        "Local-only progress storage — see PRIVACY.md on GitHub",
+        "Capacitor sync for native mobile builds"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/BrightBubbles",
+      "liveDemoUrl": "",
+      "relatedRepos": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/chandansingh7/BrightBubbles"
+        },
+        {
+          "label": "Privacy policy",
+          "url": "https://github.com/chandansingh7/BrightBubbles/blob/main/PRIVACY.md"
+        },
+        {
+          "label": "Game docs",
+          "url": "https://github.com/chandansingh7/BrightBubbles/tree/main/docs"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "BrightBubbles - Use Cases",
+          "type": "Use case",
+          "imageUrl": "/assets/diagrams/brightbubbles-use-cases.svg"
+        }
+      ],
+      "useCases": [
+        "Child: landing → splash → age mode (Tiny Learner / Explorer / Smart Challenger) → world map → Balloon Pop → earn stars and stickers",
+        "Parent: access parent zone for oversight, settings, and help",
+        "System: persist stars, stickers, and level progress in local storage with procedural Web Audio"
+      ],
+      "sequences": [
+        {
+          "title": "Play level flow",
+          "steps": [
+            "Child selects a level on the world map (1 of 20 levels)",
+            "Angular route loads the Phaser 3 Balloon Pop scene",
+            "Gameplay loop scores pops based on age-mode difficulty rules",
+            "Progress service writes stars and completion to local storage",
+            "Return to world map with updated rewards and unlocked levels"
+          ]
+        },
+        {
+          "title": "Mobile build flow",
+          "steps": [
+            "npm run build for production PWA bundle",
+            "npx cap sync to copy web assets to Android/iOS shells",
+            "npx cap open android or ios for native packaging"
+          ]
+        }
+      ],
+      "entities": [],
+      "scope": [
+        "Angular application shell with routing and services",
+        "Phaser 3 game engine integration for Balloon Pop levels",
+        "Capacitor packaging for Android and iOS",
+        "Offline-first local progress — no backend required"
+      ],
+      "deliverables": [
+        "BrightBubbles MVP (v1.0.0) — PWA and Capacitor mobile builds",
+        "Balloon Pop gameplay with age-scaled difficulty docs",
+        "Parent zone, help, and visual design guide in repo docs/",
+        "Use-case architecture diagram on portfolio site"
+      ],
+      "functionalRequirements": [
+        "Landing, splash, age mode selection, world map, Balloon Pop game, rewards, parent zone, and help screens",
+        "Child selects age mode and navigates 20 levels across Tiny Learner, Explorer, and Smart Challenger modes",
+        "Balloon Pop awards stars and stickers; progress persists locally between sessions",
+        "Parent zone provides oversight without requiring child accounts or server login"
+      ],
+      "nonFunctionalRequirements": [
+        "Offline-first PWA — gameplay works without network connectivity",
+        "Privacy-first: no login, no ads, no child data transmitted (local storage only)",
+        "Procedural Web Audio for lightweight sound effects without asset bloat",
+        "Capacitor packaging for Android and iOS native distribution",
+        "Unit tests via npm test; MVP version 1.0.0-mvp"
+      ],
+      "risks": [
+        {
+          "risk": "Local storage cleared by browser",
+          "mitigation": "Optional export/import progress feature in future release"
+        },
+        {
+          "risk": "Phaser/Angular version compatibility",
+          "mitigation": "Pin dependency versions; test on target mobile platforms"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "micro-url",
+      "title": "Micro-URL — URL Shortener Service",
+      "reportSummary": "Spring Boot microservice for URL shortening with MySQL persistence and redirect analytics.",
+      "problem": "Long URLs are hard to share; teams need short links with redirect resolution.",
+      "solution": "Spring Boot microservice with MySQL, REST API for shortening, and HTTP redirect for resolution with optional click tracking.",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "Spring Data JPA",
+        "MySQL",
+        "Gradle",
+        "Docker"
+      ],
+      "keyFeatures": [
+        "Short URL generation via REST API",
+        "HTTP 302 redirect on short code lookup",
+        "Click event tracking for analytics",
+        "CORS configuration for SPA clients",
+        "Container-friendly deployment"
+      ],
+      "architectureHighlights": [
+        "Stateless API tier for horizontal scaling",
+        "RedirectController separate from UrlMappingController",
+        "MySQL persistence for mappings and events"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/micro-url",
+      "liveDemoUrl": "",
+      "relatedRepos": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/chandansingh7/micro-url"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "Micro-URL - Architecture",
+          "type": "Architecture",
+          "imageUrl": "/assets/diagrams/micro-url-architecture.svg"
+        },
+        {
+          "name": "Micro-URL - ER Diagram",
+          "type": "ER",
+          "imageUrl": "/assets/diagrams/micro-url-er.svg"
+        }
+      ],
+      "useCases": [
+        "API consumer submits long URL and receives short link",
+        "Browser visitor opens short link and gets redirected",
+        "System logs click events for analytics"
+      ],
+      "sequences": [
+        {
+          "title": "Redirect flow",
+          "steps": [
+            "POST shorten URL → store UrlMapping in MySQL",
+            "Return short link to client",
+            "GET /{shortCode} → lookup mapping",
+            "Log ClickEvent → HTTP 302 to original URL"
+          ]
+        }
+      ],
+      "entities": [
+        "User",
+        "UrlMapping",
+        "ClickEvent"
+      ],
+      "scope": [
+        "URL shortening REST API with MySQL persistence",
+        "HTTP redirect resolution for short codes",
+        "Optional click event analytics per redirect"
+      ],
+      "deliverables": [
+        "Spring Boot microservice with Gradle build",
+        "UrlMappingController for link creation",
+        "RedirectController for 302 resolution",
+        "Architecture and ER diagrams"
+      ],
+      "functionalRequirements": [
+        "API consumer submits long URL and receives shortened link",
+        "Browser visitor opens short code and is redirected to original URL",
+        "System logs ClickEvent records for analytics",
+        "Optional user authentication for API access"
+      ],
+      "nonFunctionalRequirements": [
+        "Stateless API tier for horizontal scaling behind load balancer",
+        "Docker/Kubernetes compatible deployment",
+        "CORS configured for SPA client integration"
+      ],
+      "risks": [
+        {
+          "risk": "Short code collision under high volume",
+          "mitigation": "Use sufficient entropy in code generation; unique DB constraint"
+        },
+        {
+          "risk": "Redirect abuse or malicious URLs",
+          "mitigation": "Add URL validation and optional blocklist in future iteration"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-Commerce API & UI",
+      "reportSummary": "Classic three-tier e-commerce demo with Spring Boot API and Angular storefront.",
+      "problem": "Demonstrate end-to-end online store flows with separated frontend and backend.",
+      "solution": "Spring Boot REST API with JPA entities paired with an Angular storefront for catalog and checkout.",
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "JPA",
+        "Angular",
+        "TypeScript"
+      ],
+      "keyFeatures": [
+        "Product catalog with categories",
+        "Customer and address management",
+        "Order and line-item checkout",
+        "Classic three-tier SPA + API split"
+      ],
+      "architectureHighlights": [
+        "CheckoutController orchestrates order creation",
+        "Relational model: Product, Order, Customer, Address",
+        "Angular UI consumes REST endpoints"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/Ecommerce-Api",
+      "liveDemoUrl": "",
+      "relatedRepos": [
+        {
+          "label": "API",
+          "url": "https://github.com/chandansingh7/Ecommerce-Api"
+        },
+        {
+          "label": "UI",
+          "url": "https://github.com/chandansingh7/ecommerce-ui"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "E-Commerce - Architecture",
+          "type": "Architecture",
+          "imageUrl": "/assets/diagrams/ecommerce-architecture.svg"
+        },
+        {
+          "name": "E-Commerce - ER Diagram",
+          "type": "ER",
+          "imageUrl": "/assets/diagrams/ecommerce-er.svg"
+        }
+      ],
+      "useCases": [
+        "Shopper browses catalog and adds items to cart",
+        "Shopper completes checkout via API",
+        "System persists Order and OrderItem records"
+      ],
+      "sequences": [
+        {
+          "title": "Checkout flow",
+          "steps": [
+            "UI loads products from REST API",
+            "User builds cart client-side",
+            "POST checkout payload to CheckoutController",
+            "API creates Order + OrderItem rows",
+            "UI displays order confirmation"
+          ]
+        }
+      ],
+      "entities": [
+        "Product, ProductCategory, Customer",
+        "Order, OrderItem, Address, State, Country"
+      ],
+      "scope": [
+        "Spring Boot REST API with JPA relational model",
+        "Angular storefront for catalog browse and checkout",
+        "Separated frontend/backend three-tier architecture"
+      ],
+      "deliverables": [
+        "Ecommerce-Api — Spring Boot backend",
+        "ecommerce-ui — Angular SPA storefront",
+        "Architecture and ER diagrams"
+      ],
+      "functionalRequirements": [
+        "Shopper browses product catalog organized by category",
+        "Shopper builds cart and completes checkout via API",
+        "System persists Customer, Order, OrderItem, and Address records",
+        "CheckoutController orchestrates order creation transaction"
+      ],
+      "nonFunctionalRequirements": [
+        "Clean API/UI separation for independent deployment",
+        "Relational integrity across Product, Order, and Customer entities",
+        "REST endpoints consumable by Angular SPA"
+      ],
+      "risks": [
+        {
+          "risk": "Cart state lost on page refresh",
+          "mitigation": "Persist cart in session or local storage in UI layer"
+        },
+        {
+          "risk": "No payment gateway integration in demo",
+          "mitigation": "Document as reference implementation; extend for production payments"
+        }
+      ],
+      "featured": false
+    },
+    {
+      "id": "kubernetes-istio-scripts",
+      "title": "Kubernetes & Istio Automation",
+      "reportSummary": "DevOps script collection for Kubernetes cluster and Istio service mesh operations.",
+      "problem": "Platform teams need repeatable scripts for Kubernetes clusters and Istio service mesh operations.",
+      "solution": "Curated shell and YAML automation for cluster setup, mesh configuration, and operational DevOps workflows.",
+      "techStack": [
+        "Kubernetes",
+        "Istio",
+        "YAML",
+        "Shell"
+      ],
+      "keyFeatures": [
+        "Cluster and mesh automation helpers",
+        "Infrastructure learning artifacts",
+        "GitOps-friendly script patterns",
+        "Service mesh operational examples"
+      ],
+      "architectureHighlights": [
+        "Scripts target kubectl and Istio control plane",
+        "Supports microservice workload traffic management",
+        "Reference material for platform engineering study"
+      ],
+      "githubUrl": "https://github.com/chandansingh7/kubernetes-istio-scripts",
+      "liveDemoUrl": "",
+      "relatedRepos": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/chandansingh7/kubernetes-istio-scripts"
+        }
+      ],
+      "diagrams": [
+        {
+          "name": "K8s Istio - Platform Architecture",
+          "type": "Architecture",
+          "imageUrl": "/assets/diagrams/k8s-istio-architecture.svg"
+        }
+      ],
+      "useCases": [
+        "Platform engineer applies mesh policies and observability helpers",
+        "Developer references scripts for staging cluster setup",
+        "Self-study of K8s and Istio operational patterns"
+      ],
+      "sequences": [
+        {
+          "title": "Typical ops workflow",
+          "steps": [
+            "Clone repo and select target script",
+            "Run against kubectl cluster context",
+            "Istio sidecars apply traffic and security rules",
+            "Validate mesh health and workload routing"
+          ]
+        }
+      ],
+      "entities": [],
+      "scope": [
+        "Shell and YAML automation for Kubernetes cluster operations",
+        "Istio service mesh configuration and validation scripts",
+        "Reference material for platform engineering workflows"
+      ],
+      "deliverables": [
+        "Curated script collection in kubernetes-istio-scripts repository",
+        "Platform architecture diagram",
+        "Operational workflow documentation"
+      ],
+      "functionalRequirements": [
+        "Platform engineer can apply mesh policies using documented scripts",
+        "Developer can reference staging cluster setup procedures",
+        "Operator can validate mesh health after script execution"
+      ],
+      "nonFunctionalRequirements": [
+        "Scripts must declare compatible kubectl and Istio versions",
+        "Non-production cluster usage recommended for learning scripts",
+        "GitOps-friendly, reviewable script patterns"
+      ],
+      "risks": [
+        {
+          "risk": "Istio/Kubernetes version skew",
+          "mitigation": "Document compatible versions per script folder"
+        },
+        {
+          "risk": "Script run against wrong cluster context",
+          "mitigation": "Require explicit context validation before destructive operations"
+        }
+      ],
+      "featured": false
+    }
+  ]
+}

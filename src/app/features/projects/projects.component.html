@@ -1,0 +1,194 @@
+<section class="page">
+  <app-section-header
+    title="Projects"
+    subtitle="Open-source work with full documentation, ER/use-case/sequence diagrams, and architecture notes."
+  />
+
+  @if (projects$ | async; as data) {
+    <aside class="figjam-banner">
+      <div>
+        <h3>Architecture diagrams in FigJam</h3>
+        <p>
+          ER, sequence, use-case, and system architecture diagrams are embedded per project.
+          Click any diagram thumbnail to open a full-size viewer.
+        </p>
+      </div>
+      <div class="figjam-banner__actions">
+        <a
+          mat-flat-button
+          color="primary"
+          [href]="data.figjamBoardUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <mat-icon>architecture</mat-icon>
+          Open FigJam board
+        </a>
+      </div>
+    </aside>
+
+    <div class="projects">
+      @for (project of data.projects; track project.id) {
+        <mat-expansion-panel class="project-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ project.title }}
+              @if (project.featured) {
+                <span class="featured-badge">Featured</span>
+              }
+            </mat-panel-title>
+            <mat-panel-description>{{ project.techStack.join(' · ') }}</mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="detail">
+            @if (project.reportSummary) {
+              <p class="report-summary">{{ project.reportSummary }}</p>
+            }
+            <p><strong>Problem:</strong> {{ project.problem }}</p>
+            <p><strong>Solution:</strong> {{ project.solution }}</p>
+
+            @if (project.scope?.length) {
+              <h4>Scope</h4>
+              <ul>
+                @for (item of project.scope; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.deliverables?.length) {
+              <h4>Deliverables</h4>
+              <ul>
+                @for (item of project.deliverables; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.functionalRequirements?.length) {
+              <h4>Functional requirements</h4>
+              <ul>
+                @for (req of project.functionalRequirements; track req) {
+                  <li>{{ req }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.nonFunctionalRequirements?.length) {
+              <h4>Non-functional requirements</h4>
+              <ul>
+                @for (req of project.nonFunctionalRequirements; track req) {
+                  <li>{{ req }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.diagrams.length) {
+              <h4>Diagrams</h4>
+              <p class="hint">Click a diagram to view it full size.</p>
+              <div class="diagram-grid">
+                @for (diagram of project.diagrams; track diagram.name) {
+                  @if (diagram.imageUrl) {
+                    <figure class="diagram-figure">
+                      <figcaption>{{ diagram.type }} — {{ diagram.name }}</figcaption>
+                      <button
+                        type="button"
+                        class="diagram-frame"
+                        (click)="openDiagram(project, diagram)"
+                        [attr.aria-label]="'View full size: ' + diagram.name"
+                      >
+                        <img
+                          [src]="diagram.imageUrl"
+                          [alt]="diagram.name"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span class="diagram-overlay">
+                          <mat-icon>zoom_in</mat-icon>
+                          View diagram
+                        </span>
+                      </button>
+                    </figure>
+                  }
+                }
+              </div>
+            }
+
+            @if (project.entities.length) {
+              <h4>Entity model</h4>
+              <ul>
+                @for (entity of project.entities; track entity) {
+                  <li>{{ entity }}</li>
+                }
+              </ul>
+            }
+
+            @if (project.useCases.length) {
+              <h4>Use cases</h4>
+              <ul>
+                @for (useCase of project.useCases; track useCase) {
+                  <li>{{ useCase }}</li>
+                }
+              </ul>
+            }
+
+            @for (sequence of project.sequences; track sequence.title) {
+              <h4>Sequence — {{ sequence.title }}</h4>
+              <ol>
+                @for (step of sequence.steps; track step) {
+                  <li>{{ step }}</li>
+                }
+              </ol>
+            }
+
+            <h4>Key features</h4>
+            <ul>
+              @for (feature of project.keyFeatures; track feature) {
+                <li>{{ feature }}</li>
+              }
+            </ul>
+
+            <h4>Architecture highlights</h4>
+            <ul>
+              @for (item of project.architectureHighlights; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+
+            <div class="badges">
+              @for (tech of project.techStack; track tech) {
+                <app-badge [label]="tech" />
+              }
+            </div>
+
+            <div class="actions">
+              <button mat-flat-button color="primary" type="button" (click)="openProjectReport(project, data.figjamBoardUrl)">
+                <mat-icon>article</mat-icon>
+                View project report
+              </button>
+              <a mat-stroked-button [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                <mat-icon>code</mat-icon>
+                View on GitHub
+              </a>
+              @if (project.liveDemoUrl) {
+                <a mat-stroked-button [href]="project.liveDemoUrl" target="_blank" rel="noopener noreferrer">
+                  Live demo
+                </a>
+              }
+              <a mat-stroked-button [href]="data.figjamBoardUrl" target="_blank" rel="noopener noreferrer">
+                View diagrams
+              </a>
+              @for (repo of project.relatedRepos; track repo.url) {
+                @if (repo.url !== project.githubUrl) {
+                  <a mat-stroked-button [href]="repo.url" target="_blank" rel="noopener noreferrer">
+                    {{ repo.label }}
+                  </a>
+                }
+              }
+            </div>
+          </div>
+        </mat-expansion-panel>
+      }
+    </div>
+  }
+</section>

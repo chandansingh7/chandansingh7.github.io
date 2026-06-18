@@ -1,0 +1,53 @@
+<mat-toolbar class="navbar" role="navigation" aria-label="Main navigation">
+  <a routerLink="/" class="brand" (click)="closeMenu()">
+    <span class="brand-full">Chandan Singh</span>
+    <span class="brand-short">C. Singh</span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Primary">
+    @for (link of links; track link.path) {
+      <a
+        mat-button
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+      >
+        {{ link.label }}
+      </a>
+    }
+  </nav>
+
+  <span class="spacer"></span>
+  <app-theme-toggle />
+  <button
+    mat-icon-button
+    class="menu-btn"
+    type="button"
+    [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'"
+    [attr.aria-expanded]="menuOpen"
+    (click)="toggleMenu()"
+  >
+    <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+</mat-toolbar>
+
+@if (menuOpen) {
+  <button
+    type="button"
+    class="mobile-backdrop"
+    aria-label="Close menu"
+    (click)="closeMenu()"
+  ></button>
+  <nav class="mobile-nav" aria-label="Mobile">
+    @for (link of links; track link.path) {
+      <a
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        (click)="closeMenu()"
+      >
+        {{ link.label }}
+      </a>
+    }
+  </nav>
+}
