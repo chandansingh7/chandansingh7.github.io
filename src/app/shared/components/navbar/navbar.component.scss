@@ -49,6 +49,25 @@
   display: none;
   gap: 0.15rem;
   flex-wrap: wrap;
+
+  a.mat-mdc-button {
+    color: var(--text-secondary);
+    --mdc-text-button-label-text-color: var(--text-secondary);
+    --mat-text-button-label-text-color: var(--text-secondary);
+
+    &.active {
+      color: var(--accent);
+      --mdc-text-button-label-text-color: var(--accent);
+      --mat-text-button-label-text-color: var(--accent);
+      font-weight: 600;
+    }
+
+    &:hover:not(.active) {
+      color: var(--text-primary);
+      --mdc-text-button-label-text-color: var(--text-primary);
+      --mat-text-button-label-text-color: var(--text-primary);
+    }
+  }
 }
 
 .spacer {
@@ -59,6 +78,9 @@
 .menu-btn {
   display: inline-flex;
   flex-shrink: 0;
+  color: var(--text-primary);
+  --mdc-icon-button-icon-color: var(--text-primary);
+  --mat-icon-button-icon-color: var(--text-primary);
 }
 
 .mobile-backdrop {
@@ -100,6 +122,7 @@
 
 a.active {
   color: var(--accent);
+  font-weight: 600;
 }
 
 @include up($bp-lg) {
