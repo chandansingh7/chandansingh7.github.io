@@ -5,6 +5,7 @@ import { filter, map, startWith } from 'rxjs';
 
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { AnalyticsService } from './core/services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 })
 export class App {
   private readonly router = inject(Router);
+  private readonly _analytics = inject(AnalyticsService);
 
   readonly showChrome = toSignal(
     this.router.events.pipe(
